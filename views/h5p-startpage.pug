@@ -1,0 +1,39 @@
+extends h5p-layout
+
+block content
+    div(class="jumbotron")
+        h1("display-4")=title
+        div(class="alert alert-warning")="This demo is for debugging and demonstration purposes only and not suitable for production use!"
+    div(class="container")
+        div(class="d-flex justify-content-between")
+            h2="Existing content"
+            a(class="btn btn-primary my-2", href=baseUrl + "/new")
+                span(class="fa fa-plus-circle m-2")
+                Create new content
+        div(class="list-group")
+            each content in contentObjects ? contentObjects : []
+                div(class="list-group-item")
+                    div(class="d-flex w-10")
+                        div(class="mr-auto p-2 align-self-center")
+                            a(href=baseUrl + playUrl + "/" + content.id)
+                                h5=content.content.title || content.id
+                            div(class="small d-flex")
+                                div(class="mr-2")
+                                    span(class="fa fa-book-open")
+                                    content.content.mainLibrary
+                                div(class="mr-2")
+                                    span(class="fa fa-fingerprint")
+                                    content.id
+                        div(class="p-2")
+                            a(class="btn btn-secondary", href=baseUrl + "/edit/" + content.id)
+                                span(class="fa fa-pencil-alt m-1")
+                                edit
+                        div(class="p-2")
+                            a(class="btn btn-info", href=baseUrl + downloadUrl + "/" + content.id)
+                                span(class="fa fa-file-download m-1")
+                                edit
+                        div(class="p-2")
+                            a(class="btn btn-danger", href=baseUrl + "/delete/" + content.id)
+                                span(class="fa fa-trash-alt m-1")
+                                edit
+

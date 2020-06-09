@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "*.njsproj**": true,
+        "bin/**": true,
+        "build/**": true,
+        "node_modules/**": true,
+        "obj/**": true,
+        "**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/*.js.map": true
+    }
+}

@@ -1,0 +1,15 @@
+extends h5p-layout
+
+block prepend scriptsBlock
+    script!="window.H5PIntegration = parent.H5PIntegration || " + JSON.stringify(integration)
+
+block content
+    form(method="post" enctype="multipart/form-data" id="h5p-content-form" class="d-flex flex-column h-100")
+        main(role="main" class="flex-shrink-0")
+            div(class="w-100 h-100")
+                div(id="post-body-content")
+                    div(class="h5p-create")
+                        div(class="h5p-editor")
+        footer(class="footer fixed-bottom mt-auto py-3 bg-light border-top")
+            div(class="d-flex justify-content-end mr-3")
+                input(type="submit" name="submit" value="Save" class="btn btn-primary btn-large")

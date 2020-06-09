@@ -1,0 +1,23 @@
+{
+    "display": {
+        "hideNavBar": true
+    },
+    "backend": {
+        "Uri": "http://172.20.2.108:8088/api/"
+    },
+    "server": {
+        "pathPrefix": "/h5p/"
+    },
+    "h5p": {
+        "startPage": true,
+        "path": {
+            "core": "h5p-lib/core",
+            "editor": "h5p-lib/editor",
+            "userdata": {
+                "libraries": "user-data/libraries",
+                "content": "user-data/content",
+                "temporary-storage": "user-data/temporary-storage"
+            }
+        }
+    }
+}

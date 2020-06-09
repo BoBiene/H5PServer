@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "diagnosticLogging": true,
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach by Process ID",
+      "processId": "${command:PickProcess}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Debug Launch",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/app.ts",
+      "stopOnEntry": false,
+      "cwd": "${workspaceRoot}/",
+      "args": [
+        ""
+      ],
+      "preLaunchTask": "build",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "1338",
+        "FS_DEBUG": "1",
+        "DEBUG": "*"
+        //  "BackendUri": "http://172.20.2.108:8088/api/"
+      },
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceRoot}/build/*"
+      ]
+    }
+  ]
+}

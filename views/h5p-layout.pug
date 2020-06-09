@@ -1,0 +1,13 @@
+extends layout
+
+block stylesBlock
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" crossorigin="anonymous")
+    each styleInclude in styleUrls ? styleUrls : []
+        link(rel='stylesheet', href=styleInclude)
+
+
+block scriptsBlock
+    each scriptInclude in scriptUrls ? scriptUrls : []
+        script(src=scriptInclude)
+    each scriptInclude in scripts ? scripts : []
+        script!=scriptInclude

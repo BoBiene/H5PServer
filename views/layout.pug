@@ -1,0 +1,21 @@
+doctype html
+html(class="h-100")
+  head
+    title= title
+    link(rel='stylesheet' href=baseUrl + '/stylesheets/main.css')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+    block stylesBlock
+    block scriptsBlock
+  body(class="d-flex flex-column h-100")
+    block navbar
+      nav(class="navbar navbar-expand-lg navbar-light bg-light",style=display.hideNavBar ? "display:none" : "")
+        a(class="navbar-brand" href=baseUrl)
+          img(src="/images/logo.png" width="30" loading="lazy" style="height:100%")
+        button( class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+          span( class="navbar-toggler-icon")
+        div(class="collapse navbar-collapse" id="navbarNav")
+          ul(class="navbar-nav")
+            each navItem in navItems ? navItems : [{text:'Content',url: baseUrl}]
+              li(class="nav-item")
+                a(class="nav-link" href=navItem.url)=navItem.text
+    block content
