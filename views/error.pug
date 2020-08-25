@@ -3,4 +3,5 @@ extends layout
 block content 
   h1= message 
   h2= error.status 
+  a(href="javascript:history.back()") Go back to previous page...
   pre #{error.stack}

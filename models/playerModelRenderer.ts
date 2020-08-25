@@ -16,6 +16,7 @@ export default function render(model: IPlayerModel): H5PPlayerLayoutModel {
       setFinished: baseUrl + "/api/set-finished",
     },
     baseUrl: baseUrl,
+    url: baseUrl,
     postUserStatistics: true,
     saveFreq: 5000,
     user: context.User,

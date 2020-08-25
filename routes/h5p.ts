@@ -16,8 +16,7 @@ export default function (
     `${h5pEditor.config.playUrl}/:contentId`,
     async (req, res, next) => {
       try {
-        const lang = req["i18n"]?.language ?? "en";
-        const h5pPage = await h5pPlayer.render(req.params.contentId, lang);
+        const h5pPage = await h5pPlayer.render(req.params.contentId);
         res.render("h5p-player", h5pPage);
       } catch (error) {
         next(error);

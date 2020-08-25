@@ -86,6 +86,7 @@ var ns = H5PEditor;
           // Deliberately doing it after getParams(), so that any other validation
           // problems are also revealed
           if (!h5peditor.isMainTitleSet()) {
+            return false;
           } else {
             // Set main library
             $library.val(h5peditor.getLibrary());
