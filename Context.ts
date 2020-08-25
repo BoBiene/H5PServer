@@ -1,9 +1,9 @@
-import * as httpRequestContext from "http-request-context";
-import * as cuid from "cuid";
+import httpRequestContext from "http-request-context";
+import cuid from "cuid";
 import express = require("express");
 import User from "./User";
-import * as path from "path";
-import * as config from "config";
+import path from "path";
+import config from "config";
 
 const appName = "h5pServer";
 

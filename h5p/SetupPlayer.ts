@@ -1,5 +1,5 @@
 import { fs, H5PConfig, H5PEditor, H5PPlayer } from "h5p-nodejs-library";
-import * as path from "path";
+import path from "path";
 import renderer from "./../models/playerModelRenderer";
 import UrlGenerator from "./UrlGenerator";
 import { stringify } from "querystring";

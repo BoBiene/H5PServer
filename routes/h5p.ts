@@ -1,10 +1,10 @@
 import express = require("express");
-import * as H5P from "h5p-nodejs-library";
+import H5P from "h5p-nodejs-library";
 import Context from "../Context";
 import { H5PStartPageModel, LayoutDisplay } from "../models/types";
 import { postTestContent } from "../backend/BackendAPI";
 import { Fail } from "./Authentication";
-import * as config from "config";
+import config from "config";
 
 export default function (
   h5pEditor: H5P.H5PEditor,
@@ -16,7 +16,8 @@ export default function (
     `${h5pEditor.config.playUrl}/:contentId`,
     async (req, res, next) => {
       try {
-        const h5pPage = await h5pPlayer.render(req.params.contentId);
+        const lang = req["i18n"]?.language ?? "en";
+        const h5pPage = await h5pPlayer.render(req.params.contentId, lang);
         res.render("h5p-player", h5pPage);
       } catch (error) {
         next(error);
@@ -60,7 +61,8 @@ export default function (
     });
   }
   router.get("/edit/:contentId", async (req, res) => {
-    const page = await h5pEditor.render(req.params.contentId);
+    const lang = req["i18n"]?.language ?? "en";
+    const page = await h5pEditor.render(req.params.contentId, lang);
     res.render("h5p-editor", page);
   });
 
@@ -81,7 +83,8 @@ export default function (
   });
 
   router.get("/new", async (req, res) => {
-    const page = await h5pEditor.render(undefined);
+    const lang = req["i18n"]?.language ?? "en";
+    const page = await h5pEditor.render(undefined, lang);
     res.render("h5p-editor", page);
   });
 

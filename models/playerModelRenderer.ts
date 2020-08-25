@@ -1,7 +1,7 @@
 import { IPlayerModel, IIntegration } from "h5p-nodejs-library/build/src/types";
 import Context from "../Context";
 import { H5PPlayerLayoutModel, LayoutDisplay } from "./types";
-import * as config from "config";
+import config from "config";
 
 export default function render(model: IPlayerModel): H5PPlayerLayoutModel {
   const context = Context.current();

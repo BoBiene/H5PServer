@@ -1,12 +1,12 @@
 import User from "../User";
-import * as rm from "typed-rest-client/RestClient";
-import * as NodeCache from "node-cache";
+import { RestClient } from "typed-rest-client/RestClient";
+import NodeCache from "node-cache";
 import { IContentMetadata } from "h5p-nodejs-library/build/src/types";
-import * as config from "config";
+import config from "config";
 
 const BackendUri = config.get("backend.Uri") as string;
 const backendEnabled = !!BackendUri;
-const rest: rm.RestClient = new rm.RestClient("h5pFrontend", BackendUri, null, {
+const rest: RestClient = new RestClient("h5pFrontend", BackendUri, null, {
   socketTimeout: 3000,
 });
 
@@ -20,7 +20,10 @@ export async function getUser(token: string): Promise<User> {
 
       if (backendEnabled) {
         const request = await rest.get<User>("GetUser", prams);
-        user = request.result;
+        user = {
+          ...request.result,
+          id: request.result.id.toString(), //ensure id is a string
+        };
       } else {
         user = {
           id: "mock",

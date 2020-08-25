@@ -3,7 +3,7 @@ import {
   ILibraryName,
   IInstalledLibrary,
 } from "h5p-nodejs-library/build/src/types";
-import * as fsExtra from "fs-extra";
+import fsExtra from "fs-extra";
 import Context from "../../Context";
 
 export default class FileLibraryStorage extends FileLibraryStorageBase {

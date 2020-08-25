@@ -5,12 +5,12 @@ import FileContentStorage from "./storage/FileContentStorage";
 import DirectoryTemporaryFileStorage from "h5p-nodejs-library/build/src/implementation/fs/DirectoryTemporaryFileStorage";
 import UrlGenerator from "./UrlGenerator";
 import renderer from "./../models/editorModelRenderer";
-import * as path from "path";
-import * as cfg from "config";
+import path from "path";
+import cfg from "config";
 
-import * as defaultCopyrightSemanticsLanguageFile from "h5p-nodejs-library/build/assets/translations/copyright-semantics/en.json";
-import * as defaultMetadataSemanticsLanguageFile from "h5p-nodejs-library/build/assets/translations/metadata-semantics/en.json";
-import * as defaultClientLanguageFile from "h5p-nodejs-library/build/assets/translations/client/en.json";
+import defaultCopyrightSemanticsLanguageFile from "h5p-nodejs-library/build/assets/translations/copyright-semantics/en.json";
+import defaultMetadataSemanticsLanguageFile from "h5p-nodejs-library/build/assets/translations/metadata-semantics/en.json";
+import defaultClientLanguageFile from "h5p-nodejs-library/build/assets/translations/client/en.json";
 import SimpleTranslator from "h5p-nodejs-library/build/src/helpers/SimpleTranslator";
 
 export default function (config: IH5PConfig): H5PEditor {

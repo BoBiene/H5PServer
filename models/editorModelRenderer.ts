@@ -1,7 +1,7 @@
 import { IEditorModel, IIntegration } from "h5p-nodejs-library/build/src/types";
 import Context from "../Context";
 import { H5PEditorLayoutModel, LayoutDisplay } from "./types";
-import * as config from "config";
+import config from "config";
 
 export default function render(model: IEditorModel): H5PEditorLayoutModel {
   const context = Context.current();
