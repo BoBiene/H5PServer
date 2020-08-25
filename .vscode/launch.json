@@ -7,9 +7,17 @@
       "request": "attach",
       "name": "Attach by Process ID",
       "processId": "${command:PickProcess}",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug IISNode",
+      "address": "localhost",
+      "port": 9229,
+
+      "localRoot": "C:\\Program Files\\inray\\H5PServer\\build\\",
+      "remoteRoot": "C:\\Program Files\\inray\\H5PServer\\build\\"
     },
     {
       "name": "Debug Launch",
@@ -18,14 +26,10 @@
       "program": "${workspaceRoot}/app.ts",
       "stopOnEntry": false,
       "cwd": "${workspaceRoot}/",
-      "args": [
-        ""
-      ],
+      "args": [""],
       "preLaunchTask": "build",
       "runtimeExecutable": null,
-      "runtimeArgs": [
-        "--nolazy"
-      ],
+      "runtimeArgs": ["--nolazy"],
       "env": {
         "NODE_ENV": "development",
         "PORT": "1338",
@@ -35,9 +39,7 @@
       },
       "console": "internalConsole",
       "sourceMaps": true,
-      "outFiles": [
-        "${workspaceRoot}/build/*"
-      ]
+      "outFiles": ["${workspaceRoot}/build/*"]
     }
   ]
 }

@@ -5,8 +5,8 @@ import fs = require("fs");
 import expressRoutes from "../routes/h5p";
 import setupPlayer from "./SetupPlayer";
 import setupEditor from "./SetupEditor";
-import * as fileUpload from "express-fileupload";
-import * as config from "config";
+import fileUpload from "express-fileupload";
+import config from "config";
 
 export default async function (router: Router) {
   const h5pConfig = await new H5PConfig(
