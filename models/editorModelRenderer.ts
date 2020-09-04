@@ -28,6 +28,7 @@ export default function render(model: IEditorModel): H5PEditorLayoutModel {
     },
     parameterUrl: model.urlGenerator.parameters(),
     playerUrl: model.urlGenerator.play(),
+    url: baseUrl,
     baseUrl: baseUrl,
     postUserStatistics: true,
     saveFreq: 5000,
