@@ -20,7 +20,7 @@
     "config": "^3.3.1",
     "cuid": "^2.1.8",
     "debug": "^2.6.9",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "i18next": "19.6.3",
     "i18next-http-middleware": "^3.0.2",
     "i18next-fs-backend": "^1.0.7",
